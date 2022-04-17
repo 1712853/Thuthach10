@@ -1,0 +1,18 @@
+@use '../globals';
+
+@mixin area($row-start, $row-end, $col-start, $col-end, 
+            $bg: var(--color-white), 
+            $color: var(--color-dark-grey)) 
+            {
+    grid-row: #{$row-start} / #{$row-end};
+    grid-column: #{$col-start} / #{$col-end}; 
+    background-color: $bg;
+    color: $color;
+}
+
+@mixin maxWidth($value)
+{
+    @media screen and (max-width: $value) {
+        @content;
+    }
+}
